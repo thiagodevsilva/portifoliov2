@@ -18,15 +18,17 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
+                        <a class="" style="color: #00bf63; font-weight: 100; font-size: 0.7em; margin-right: 25px;">
+                            Area do Thiago
+                        </a>  
                         <a class="button is-primary" style="background-color: #00bf63;">
                             <strong>Say Hello!</strong>
-                        </a>                    
+                        </a>                                           
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     
     </nav>
 </template>

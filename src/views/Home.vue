@@ -110,15 +110,19 @@
     </section>
     <section class="section projects is-medium is-white has-text-centered">
       <div class="container">
-        <UpdateBox />
+        <UpdateBox :projetos="this.projetos"/>
       </div>
     </section>
   </div>
 </template>
   
 <script>
-import UpdateBox from '../components/home/Updates.vue';
-  import moment from 'moment';
+  import { db } from '../services/firebase.js';
+  import { collection, orderBy, onSnapshot, query } from 'firebase/firestore';
+
+  import UpdateBox from '../components/home/Updates.vue';
+  import moment from 'moment';  
+
   export default {
     name: 'HomeView',
     components:{
@@ -146,9 +150,29 @@ import UpdateBox from '../components/home/Updates.vue';
             image: "imagem-projeto-3.jpg",
           },
         ],
+        projetos: []
       };
     },
-    create(){
+    async created() {
+      const projectsRef = collection(db, 'projetos');
+      const orderedProjectsRef = query(projectsRef, orderBy('descricao'));
+
+      onSnapshot(orderedProjectsRef, (snapshot) => {
+        this.projetos = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          descricao: doc.data().descricao,
+          detalhes: doc.data().detalhes,
+        }));
+        // Imprimir as informações de cada projeto no console
+
+        console.log(this.projetos)
+        this.projetos.forEach((projeto) => {
+          console.log(`ID: ${projeto.id}`);
+          console.log(`Descrição: ${projeto.descricao}`);
+          console.log(`Detalhes: ${projeto.detalhes}`);
+        });
+      });
+
       
     },
     methods:{

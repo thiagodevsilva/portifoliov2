@@ -4,8 +4,9 @@ import App from './App.vue'
 import HomeView from './views/Home.vue'
 import AboutView from './views/About.vue'
 import ProjetosView from './views/Projetos.vue'
+import ProjectForm from './views/ProjectForm.vue'
 import 'bulma/css/bulma.css';
-
+import '@fortawesome/fontawesome-free/css/all.css'
 
 const routes = [
     { 
@@ -15,6 +16,10 @@ const routes = [
     { 
         path: '/projetos',
         component: ProjetosView 
+    },
+    { 
+        path: '/projetos/insert',
+        component: ProjectForm 
     },
     { 
         path: '/about',
@@ -27,4 +32,6 @@ const router = createRouter({
     routes
 })
 
-createApp(App).use(router).mount('#app')
+createApp(App)
+    .use(router)
+    .mount('#app')

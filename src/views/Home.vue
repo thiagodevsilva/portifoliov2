@@ -129,28 +129,8 @@
       UpdateBox,
     },
     data() {
-      return {
-        projects: [
-          {
-            id: 1,
-            title: "Projeto 1",
-            description: "Descrição do projeto 1",
-            image: "imagem-projeto-1.jpg",
-          },
-          {
-            id: 2,
-            title: "Projeto 2",
-            description: "Descrição do projeto 2",
-            image: "imagem-projeto-2.jpg",
-          },
-          {
-            id: 3,
-            title: "Projeto 3",
-            description: "Descrição do projeto 3",
-            image: "imagem-projeto-3.jpg",
-          },
-        ],
-        projetos: []
+      return {        
+        projetos: [],
       };
     },
     async created() {
@@ -171,9 +151,7 @@
           console.log(`Descrição: ${projeto.descricao}`);
           console.log(`Detalhes: ${projeto.detalhes}`);
         });
-      });
-
-      
+      });      
     },
     methods:{
       dhCode() {

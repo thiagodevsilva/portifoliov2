@@ -51,7 +51,7 @@
         <div class="columns is-mobile is-centered m-5">
           <div class="column is-half">
             <button class="button is-primary is-rounded m-4" @click.prevent="saveForm()">Salvar</button>
-            <router-link class="button has-text-link is-rounded m-4" :to="'/'">Voltar</router-link>
+            <router-link class="button has-text-link is-rounded m-4" :to="'/projetos'">Voltar</router-link>
           </div>
         </div>
 

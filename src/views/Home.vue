@@ -1,12 +1,12 @@
 <template>
   <div id="home">
-    <section class="hero is-white has-text-centered">
+    <section class="hero has-text-centered">
       <div class="hero-body">
         <div class="container">
           <div class="columns is-centered">
             <div class="column">
-              <h1 class="title is-spaced is-size-1-desktop is-size-2-tablet is-size-3-mobile">Programador Full-stack</h1>
-              <h2 class="subtitle is-size-4-tablet">
+              <h1 class="title is-spaced has-text-light is-size-1-desktop is-size-2-tablet is-size-3-mobile">Programador Full-stack</h1>
+              <h2 class="subtitle is-size-4-tablet has-text-light">
                 Sejam bem-vindos ao meu portifólio!
               </h2>
               <img src="@/assets/images/thiago.png" title="Thiago Silva" style="object-fit: contain;
@@ -19,18 +19,21 @@
         </div>
       </div>
       <div class="hero-foot">
-        <div class="container">
-          <img class="is-bottom" src="@/assets/images/setup.png" style="margin-top: -30px;">
+        <div ref="observeMe">
+          <video ref="videoRef" src="@/assets/videos/intro.mp4" muted></video>
         </div>
+        <!-- <div class="container">
+          <img class="is-bottom" src="@/assets/images/setup.png" style="margin-top: -30px;">
+        </div> -->
       </div>
     </section>
-    <section class="section is-medium is-primary has-text-centered is-long" style="background-color: #00bf63; margin-top: -8px;">
+    <section class="is-primary has-text-centered" style="background-color: #00bf63; margin-top: -8px; width: 100%; padding: 80px 0;">
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-three-fifths">
             <h1 class="title is-spaced is-size-3-desktop is-size-4-mobile">Olá, eu sou o Thiago!</h1>
             <h2 class="subtitle is-size-5-desktop has-text-weight-normal">
-              Toda a vida apaixonado por internet e tecnologia, TI a 9 anos, e hoje completam exatamente {{ dhCode() }} codando. Ainda muito focado em firmar bases, e obter conhecimento, busco enraizar boas práticas e conceitos ágeis e escaláveis. Veja um pouco do que tenho feito.
+              Toda a vida apaixonado por internet e tecnologia, TI a mais de 10 anos, e hoje completam exatamente {{ dhCode() }} focado na carreira de programação. Ainda muito dedicado em firmar bases, e obter conhecimento, busco enraizar boas práticas e conceitos ágeis e escaláveis. Veja um pouco do que conheço e tenho feito.
             </h2>
           </div>
           
@@ -38,79 +41,92 @@
       </div>
 
     </section>
-    <section class="section has-text-centered" style="margin-top: -8rem; padding-bottom: 1rem;">
-      <div class="container is-narrow">
-        <div class="box">
-          <div class="content">
-            <div class="columns is-centered">              
-              <div class="column frentes">
-                <img src="@/assets/images/back.png" style="width: 70px;">
-                <h1 class="title is-size-4 is-spaced">Back-end</h1>
-                <p>Dominio de implementações de complexidade média, explorando a linguagem PHP, Node e Composer.</p>
-                <p class="list-title has-text-primary has-text-weight-normal">
-                  Coisas que gosto de fazer:
-                </p>
-                <p>CRUD, Auth, Busca, Notificações, API, Webhooks, Invoicy, E-mail</p>
-                <p class="list-title has-text-primary has-text-weight-normal">
-                  Linguagens:
-                </p>
-                <ul style="list-style: none; margin: 0; padding: 0;">
-                  <li>PHP</li>
-                <p class="list-title has-text-primary has-text-weight-normal">
-                  Frameworks:
-                </p>
-                  <li>Laravel</li>
-                  <li>Slim</li>
-                </ul>
-              </div>
-              <div class="column frentes">
-                <img src="@/assets/images/front.png" style="width: 70px;">
-                <h1 class="title is-size-4 is-spaced">Front-end</h1>
-                <p>Dominio de criação de estruturas simples, com semantica, reatividade e responsividade.</p>
-                <p class="list-title has-text-primary has-text-weight-normal">
-                  Coisas que gosto de fazer:
-                </p>
-                <p>Formulários, Áreas de texto, Navegações, Galerias, Menus</p>
-                <p class="list-title has-text-primary has-text-weight-normal">
-                  Dev tools:
-                </p>
-                <ul style="list-style: none; margin: 0; padding: 0;">
-                  <li>CSS</li>
-                  <li>SCSS</li>
-                  <li>Javascript</li>
-                  <li>JQuery</li>
-                  <li>Bootstrap</li>
-                  <li>VueJS</li>
-                  <li>Blade</li>
-                  <li>Twig</li>
-                  <li>Bulma</li>
-                </ul>
-              </div>
-              <div class="column frentes">
-                <img src="@/assets/images/db.png" style="width: 70px;">
-                <h1 class="title is-size-4 is-spaced">Database</h1>
-                <p>Domínio de construção de queries, experiência com SQL Server, e vivência com MySQL.</p>
-                <p class="list-title has-text-primary has-text-weight-normal">
-                  Coisas que gosto de fazer:
-                </p>
-                <p>Relatórios, Models, Migrations</p>
-                <p class="list-title has-text-primary has-text-weight-normal">
-                  Dev tools:
-                </p>
-                <ul style="list-style: none; margin: 0; padding: 0;">
-                  <li>SQL Server</li>
-                  <li>MySQL</li>
-                  <li>Firebase</li>
-                </ul>
-              </div>
-            </div>
+    <section class="has-text-centered is-flex is-justify-content-center is-flex-wrap-wrap " style="padding-bottom: 1rem; margin-top: -40px; background: none;">      
+      <div class="column frentes">
+        <div>
+          <img src="@/assets/images/back.png" style="width: 70px;">
+          <h1 class="title is-size-4 is-spaced">Back-end</h1>
+          <p>Dominio de implementações de complexidade média, explorando a linguagem PHP, Node e Composer.</p>
+          <p class="list-title has-text-primary has-text-weight-normal" style="padding: 20px;">
+            Coisas que gosto de fazer:
+          </p>
+          <p>CRUD, Auth, Busca, Notificações, API, Webhooks, Invoicy, E-mail</p>
+
+          <p class="list-title has-text-primary has-text-weight-normal" style="padding: 20px;">
+            Linguagens:
+          </p>
+
+          <div style="list-style: none; margin: 0; padding: 0;">
+            <span class="li-langs">PHP</span>
           </div>
+
+          <p class="list-title has-text-primary has-text-weight-normal" style="padding: 20px;">
+            Frameworks:
+          </p>
+
+          <div style="list-style: none; margin: 0; padding: 0;">
+            <span class="li-langs">Laravel</span>
+            <span class="li-langs">Slim</span>
+          </div>
+          
+        </div>
+      </div>
+      <div class="column frentes">
+        <div>
+          <img src="@/assets/images/front.png" style="width: 70px;">
+          <h1 class="title is-size-4 is-spaced">Front-end</h1>
+          <p>Dominio de criação de estruturas simples, com semantica, reatividade e responsividade.</p>
+          <p class="list-title has-text-primary has-text-weight-normal" style="padding: 20px;">
+            Coisas que gosto de fazer:
+          </p>
+          <p>Formulários, Áreas de texto, Navegações, Galerias, Menus</p>
+          <p class="list-title has-text-primary has-text-weight-normal" style="padding: 20px;">
+            Dev tools:
+          </p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center;">
+            <span class="li-langs">CSS</span>
+            <span class="li-langs">SCSS</span>
+            <span class="li-langs">Javascript</span>
+            <span class="li-langs">JQuery</span>
+            <span class="li-langs">Bootstrap</span>
+            <span class="li-langs">VueJS</span>
+            <span class="li-langs">Blade</span>
+            <span class="li-langs">Twig</span>
+            <span class="li-langs">Bulma</span>
+          </ul>
+        </div>
+      </div>
+      <div class="column frentes">
+        <div>
+          <img src="@/assets/images/db.png" style="width: 70px;">
+          <h1 class="title is-size-4 is-spaced">Database</h1>
+          <p>Domínio de construção de queries, experiência com SQL Server, e vivência com MySQL.</p>
+          <p class="list-title has-text-primary has-text-weight-normal" style="padding: 20px;">
+            Coisas que gosto de fazer:
+          </p>
+          <p>Relatórios, Models, Migrations</p>
+          <p class="list-title has-text-primary has-text-weight-normal" style="padding: 20px;">
+            Dev tools:
+          </p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center;">
+            <span class="li-langs">SQL Server</span>
+            <span class="li-langs">MySQL</span>
+            <span class="li-langs">Firebase</span>
+          </ul>
         </div>
       </div>
     </section>
-    <section class="section projects is-medium is-white has-text-centered">
-      <div class="container">
+    <section class="hashtags" style="width: 100%;">
+      <div>
+        <HashtagSelection />
+      </div>
+      <!-- <div class="container">
         <UpdateBox :projetos="this.projetos"/>
+      </div> -->
+    </section>
+    <section>
+      <div>
+        <ProjetosDestaques />
       </div>
     </section>
   </div>
@@ -120,17 +136,22 @@
   import { db } from '../services/firebase.js';
   import { collection, orderBy, onSnapshot, query } from 'firebase/firestore';
 
-  import UpdateBox from '../components/home/Updates.vue';
+  // import UpdateBox from '../components/home/Updates.vue';
+  import HashtagSelection from '../components/home/HashtagsSelection.vue';
+  import ProjetosDestaques from '../components/home/ProjetosDestaques.vue';
   import moment from 'moment';  
 
   export default {
     name: 'HomeView',
     components:{
-      UpdateBox,
+      HashtagSelection,
+      ProjetosDestaques,
+      // UpdateBox,
     },
     data() {
       return {        
         projetos: [],
+        observer: null,
       };
     },
     async created() {
@@ -143,15 +164,25 @@
           descricao: doc.data().descricao,
           detalhes: doc.data().detalhes,
         }));
-        // Imprimir as informações de cada projeto no console
-
-        console.log(this.projetos)
-        this.projetos.forEach((projeto) => {
-          console.log(`ID: ${projeto.id}`);
-          console.log(`Descrição: ${projeto.descricao}`);
-          console.log(`Detalhes: ${projeto.detalhes}`);
-        });
       });      
+    },
+    mounted(){
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            setTimeout(() => {
+              this.$refs.videoRef.play();
+            }, 500);
+
+          } 
+        },
+        {
+          threshold: 0.1
+        }
+      );
+
+      this.observer.observe(this.$refs.observeMe);
+
     },
     methods:{
       dhCode() {
@@ -161,19 +192,19 @@
         const year = diff.years() > 1 ? diff.years() + ' anos' : diff.years() + ' ano';
         const month = diff.months() > 1 ? diff.months() + ' meses' : diff.months() + ' mês';
         const day = diff.days() > 1 ? diff.days() + ' dias' : diff.days() + ' dia';
-        return `${year}, ${month},  ${day}`;
+        return `${year}, ${month} e ${day}`;
       }
     }
   };
 </script>
   
 <style>
-  .home {
+  #home {
+    background-color: #252627;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px;
   }
   
   .intro {
@@ -182,31 +213,6 @@
   
   .highlight {
     color: #4f4fff;
-  }
-  
-  .projects {
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .project {
-    width: 300px;
-    margin: 20px;
-    text-align: center;
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project h4 {
-    margin-top: 0;
-  }
-  
-  .project p {
-    color: #666;
   }
   
   .router-link {
@@ -219,12 +225,21 @@
   }
 
   .frentes {
-    border-bottom: 0px solid #E6ECF8; 
-    border-right: 1px solid #E6ECF8;
+    border-radius: 6px;
     padding: 25px !important;
+    max-width: 330px;
+    min-width: 299px;
+    width: 100%;
+    background: whitesmoke;
+    margin: 0 10px 10px 10px;
   }
-  .frentes:last-of-type {
-  border-right: none;
-}
+
+  .li-langs {
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 6px;
+    margin: 4px;
+  }
+
 </style>
   

@@ -22,7 +22,7 @@
       },
       methods: {
         listarProjetos() {
-          console.log('Listar projetos');
+          // console.log('Listar projetos');
         }
       },
       created() {

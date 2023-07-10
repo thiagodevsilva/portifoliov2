@@ -24,7 +24,12 @@
       </nav>
       <ul>
         <li v-for="projeto in getPaginatedItems" :key="projeto.id">
-          <div class="container" style="border: 1px solid red; height: 210px; margin-top: 12px;">
+          <div class="container container-projeto">
+            <div>
+              <button @click.prevent="editarProjeto(projeto.id)"><i class="fa-solid fa-pen-to-square editar-projeto"></i> {{ projeto.id }}</button>
+              <button style="cursor: pointer;"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+
             <h2>{{ projeto.descricao }}</h2>
             <p>{{ projeto.detalhes }}</p>
           </div>
@@ -76,6 +81,9 @@
       changePage(pageNumber) {
         this.currentPage = pageNumber;
       },
+      editarProjeto (id) {
+        this.$router.push({ name: 'editProject', params: { id: id } });
+      },
     },
     computed: {
       pageCount() {
@@ -92,11 +100,27 @@
 </script>
 
 <style scoped>
+  .container-projeto {
+    box-shadow: 0 0 3px #c1c1c1;
+    height: 210px;
+    margin-top: 12px;
+    position: relative;
+    padding: 15px;
+    border-radius: 6px;
+  }
+  .container-projeto div {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+  .editar-projeto{
+    margin-right: 3px;
+    cursor: pointer;
+  }
   .pagination {
     display: flex;
     justify-content: center;
   }
-
   .pagination li {
     margin: 0 5px;
     list-style-type: none;

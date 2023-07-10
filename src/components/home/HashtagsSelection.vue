@@ -38,7 +38,7 @@
             let promises = this.tags.map(dado => this.getTagData(dado));
             let dataTags = await Promise.all(promises);
             this.dataTags = dataTags;
-            console.log(this.dataTags);
+            // console.log(this.dataTags);
 
         },
         methods:{

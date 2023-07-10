@@ -1,13 +1,13 @@
 <template>
   <div id="home">
     <section class="hero has-text-centered">
-      <div class="hero-body">
+      <div class="mt-5">
         <div class="container">
           <div class="columns is-centered">
             <div class="column">
               <h1 class="title is-spaced has-text-light is-size-1-desktop is-size-2-tablet is-size-3-mobile">Programador Full-stack</h1>
               <h2 class="subtitle is-size-4-tablet has-text-light">
-                Sejam bem-vindos ao meu portifólio!
+                Seja bem-vindo ao meu portifólio!
               </h2>
               <img src="@/assets/images/thiago.png" title="Thiago Silva" style="object-fit: contain;
                                                                                       width: 100%;
@@ -33,7 +33,7 @@
           <div class="column is-three-fifths">
             <h1 class="title is-spaced is-size-3-desktop is-size-4-mobile">Olá, eu sou o Thiago!</h1>
             <h2 class="subtitle is-size-5-desktop has-text-weight-normal">
-              Toda a vida apaixonado por internet e tecnologia, TI a mais de 10 anos, e hoje completam exatamente {{ dhCode() }} focado na carreira de programação. Ainda muito dedicado em firmar bases, e obter conhecimento, busco enraizar boas práticas e conceitos ágeis e escaláveis. Veja um pouco do que conheço e tenho feito.
+              Toda a vida apaixonado por internet e tecnologia, TI a mais de 10 anos, e hoje completam exatamente {{ dhCode() }} focado na carreira de desenvolvedor. Ainda muito dedicado em firmar bases, e incorporar conhecimento, busco enraizar boas práticas e conceitos ágeis e escaláveis. Veja um pouco do que conheço e tenho feito.
             </h2>
           </div>
           
@@ -46,7 +46,7 @@
         <div>
           <img src="@/assets/images/back.png" style="width: 70px;">
           <h1 class="title is-size-4 is-spaced">Back-end</h1>
-          <p>Dominio de implementações de complexidade média, explorando a linguagem PHP, Node e Composer.</p>
+          <p>Dominio de implementações de complexidade média, explorando a linguagem PHP e Javascript com bibliotecas Node e Composer.</p>
           <p class="list-title has-text-primary has-text-weight-normal" style="padding: 20px;">
             Coisas que gosto de fazer:
           </p>
@@ -116,6 +116,14 @@
         </div>
       </div>
     </section>
+
+    <!-- Projetos em destaque -->
+    <section style="width: 100%;">
+      <div>
+        <ProjetosDestaques />
+      </div>
+    </section>
+
     <section class="hashtags" style="width: 100%;">
       <div>
         <HashtagSelection />
@@ -123,11 +131,6 @@
       <!-- <div class="container">
         <UpdateBox :projetos="this.projetos"/>
       </div> -->
-    </section>
-    <section>
-      <div>
-        <ProjetosDestaques />
-      </div>
     </section>
   </div>
 </template>

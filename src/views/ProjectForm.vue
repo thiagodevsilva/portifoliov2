@@ -107,13 +107,26 @@
 
     },
     methods: {
+      /**
+       * abre a seleção de imagem
+       */
       selectImage() {
         this.$refs.imagemInput.click();
       },
+
+      /**
+       * quando input da imagem receber uma alteração o arquivo é passado para {this.imagem}
+       * a mudança também é monitorada pelo {this.imageChange}
+       * @param {event} event 
+       */
       onFileChange(event) {
         this.imagem = event.target.files[0];
         this.imageChange = true;
       },
+
+      /**
+       * Salva a imagem no fire storage
+       */
       async uploadImage() {    
         
         if (this.imagem) {
@@ -143,16 +156,27 @@
         } else {
           return;
         }
-      }, 
+      },
+      
+      /**
+       * Botão para adicionar a tag 
+       * Caso tenha uma tag puxa o dado para o array de tags
+       */
       addTag() {
         if (this.tag !== '') {
           this.tags.push(this.tag)
           this.tag = ''
         }
       },
+
+      /**
+       * Remove a tag clicada do array de tags
+       * @param {string} tag 
+       */
       removeTag(tag) {        
         this.tags.splice(tag, 1);        
       },
+
       async saveForm(){
         try {
           await this.uploadImage();

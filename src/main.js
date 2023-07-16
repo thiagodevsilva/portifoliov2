@@ -24,7 +24,7 @@ const routes = [
     { 
         path: '/projetos/edit/:id',
         component: ProjectForm,
-        name: 'id' 
+        name: 'editProject' 
     },
     { 
         path: '/about',

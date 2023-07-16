@@ -2,7 +2,7 @@
   <nav id="nav" class="navbar is-transparent" role="navigation" aria-label="main navigation" style="padding: 1.2rem 0;">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="/">
                 <img src="@/assets/images/t.png" class="image is-96x96" style="object-fit: contain;" title="Thiago Silva">
             </a>
 

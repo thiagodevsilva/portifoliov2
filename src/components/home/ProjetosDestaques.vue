@@ -70,7 +70,7 @@
         <div style="padding: 10px 0; text-align: center; color: #555; font-size: 18px; background-color: #FFF;">
             <a style="text-decoration: none; color: #555; margin: auto; display: flex; justify-content: center; align-items: center;" href="#">
                 <img src="@/assets/images/list-icon.png" style="width: 40px;" alt="">
-                <span>MAIS PROJETOS</span>
+                <router-link to="/projetos">Veja mais projetos de Thiago</router-link>
             </a>
         </div>        
     </div>

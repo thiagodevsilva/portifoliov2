@@ -10,11 +10,11 @@
         <div style="padding: 15px; border-radius: 6px; box-shadow: 0 0 3px #c1c1c1; width: 100%; max-width: 700px; margin: 0 auto;">
           <div class="is-grouped">
             <label class="label" style="margin-left: 25px;">Descrição</label>
-            <input class="input" name="descricao" type="text" placeholder="Descrição" :value="project.descricao">
+            <input class="input" name="descricao" type="text" placeholder="Descrição" v-model="project.descricao">
           </div>
           <div class="is-grouped mt-3">
             <label class="label" style="margin-left: 25px;">Detalhes</label>
-            <textarea class="input textarea" name="detalhes" type="text" placeholder="Detalhes" :value="project.detalhes"></textarea>
+            <textarea class="input textarea" name="detalhes" type="text" placeholder="Detalhes" v-model="project.detalhes"></textarea>
           </div>
 
           <div class="is-grouped mt-3" style="">
@@ -31,11 +31,11 @@
 
           <div class="is-grouped mt-3">
             <label class="label" style="margin-left: 25px;">Link GitHub</label>
-            <input class="input" name="github" type="text" placeholder="GitHub" :value="project.github">
+            <input class="input" name="github" type="text" placeholder="GitHub" v-model="project.github">
           </div>
           <div class="is-grouped mt-3">
             <label class="label" style="margin-left: 25px;">Link Page</label>
-            <input class="input" name="page" type="text" placeholder="Link" :value="project.page">
+            <input class="input" name="page" type="text" placeholder="Link" v-model="project.page">
           </div>
           <div class="is-grouped mt-3">
             <label for="tag-input" class="label" style="margin-left: 25px;">Tags</label>          
@@ -122,6 +122,7 @@
       onFileChange(event) {
         this.imagem = event.target.files[0];
         this.imageChange = true;
+        this.$refs.imageDisplay.src = URL.createObjectURL(this.imagem);
       },
 
       /**
@@ -220,10 +221,8 @@
         return projeto;
       },
       formHasChanged() {
-        
-        console.log(JSON.stringify(this.project) !== JSON.stringify(this.initialProjectValues));
-
-          
+        // continuar comportamento
+        // console.log(JSON.stringify(this.project) !== JSON.stringify(this.initialProjectValues));          
         return false;
       },
       checkForUnsavedChanges() {

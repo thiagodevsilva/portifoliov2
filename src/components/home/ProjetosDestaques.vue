@@ -8,10 +8,10 @@
             <div ref="observeMeEfl" class="columns" style="margin: 0 auto; width: 100%; max-width: 1200px;">
                 
                 <div class="column is-two-fifths" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: auto;">
-                    <span class="title" style="color: #FFF;">
+                    <span class="title" style="color: #FFF; text-align: center;">
                         EFL BRAZIL                        
                     </span>
-                    <span class="subtitle" style="color: #FFF;">
+                    <span class="subtitle" style="color: #FFF; text-align: center;">
                         Portal do aluno e gerenciador de exercícios.
                     </span>
                 </div>
@@ -54,6 +54,14 @@
                             <div class="">
                                 <div>
                                     <img src="@/assets/images/eflbrazil/efle-capa.png">
+                                </div>
+                            </div>
+                        </slide>
+
+                        <slide :key="6">
+                            <div class="">
+                                <div>
+                                    <img src="@/assets/images/eflbrazil/efle-listas.png">
                                 </div>
                             </div>
                         </slide>
@@ -116,7 +124,6 @@ export default {
 
                 if (documento.exists()) {
                     this.EFL = documento.data();
-                    console.log(this.EFL.imagem);
                 }
 
             } catch (error) {

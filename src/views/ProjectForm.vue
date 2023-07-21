@@ -1,4 +1,46 @@
 <template>
+
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="p-5">
+        <div class="columns" style="">
+          <div class="is-one-third">
+            <img src="@/assets/images/clotilde.png" style="max-width: 180px;">
+          </div>
+          <div class="column">
+            <div class="checkUserSecond" style="width: 100%; display: none; padding: 15px 25px; background-color: #fff; border-radius: 7px; margin-left: auto;">
+              <div style="width: 100%; max-width: 700px; text-align: center;">
+                <div style="width: 100%; max-width: 700px;">
+                  <span>Ah sim, claro.. e qual é a senha?</span>
+                </div>
+                <div style="text-align: center;" class="control is-small mt-3">
+                  <input class="input is-small" type="password">
+                </div>
+              </div>
+              <div style="text-align: center; padding-top: 15px;">
+                <button class="button is-small is-success is-light">Validar!</button>
+                <button class="button is-small is-info is-light ml-2" @click.prevent="closeModal()">Cancelar</button>
+              </div>
+            </div>
+            <div class="checkUserFirst" style="width: 100%; padding: 15px 25px; background-color: #fff; border-radius: 7px; margin-left: auto;" >
+              <div style="width: 100%; max-width: 700px; text-align: center;">
+                <div style="width: 100%; max-width: 700px;">
+                  <span>Hi Dear! Apenas o Thiago pode fazer essa operação.. por acaso você não é ele.. é?</span>
+                </div>
+                <div style="text-align: center; padding-top: 15px;">
+                  <button class="button is-small is-info is-light" @click.prevent="closeModal()">É eu não sou..</button>
+                  <button @click.prevent="getSenha" class="button is-small is-success is-light ml-2">Sou eu Thaistildes!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button @click.prevent="closeModal()" class="modal-close is-large" aria-label="close"></button>
+  </div>
+
   <div id="formProjetos">
     <form class="columns" id="projeto" method="POST">
       <div class="column">
@@ -57,7 +99,7 @@
                 
         <div class="columns is-mobile is-centered">
           <div class="column is-flex is-justify-content-space-around">
-            <button class="button is-primary is-rounded m-4" @click.prevent="saveForm()">Salvar</button>
+            <button class="button is-primary is-rounded m-4" @click.prevent="openModal()">Salvar</button>
             <router-link class="button has-text-link is-rounded m-4" :to="'/projetos'" @click.prevent="checkForUnsavedChanges">Voltar</router-link>
           </div>
         </div>
@@ -107,6 +149,21 @@
 
     },
     methods: {
+      openModal() {
+        document.querySelector('.modal').classList.add('is-active');
+        document.documentElement.classList.add('is-clipped');
+      },
+      closeModal() {
+        document.querySelector('.modal').classList.remove('is-active');
+        document.documentElement.classList.remove('is-clipped');
+        document.querySelector('.checkUserFirst').style.display = 'block';
+        document.querySelector('.checkUserSecond').style.display = 'none';
+      },
+      getSenha() {
+        document.querySelector('.checkUserFirst').style.display = 'none';
+        document.querySelector('.checkUserSecond').style.display = 'block';
+      },
+
       /**
        * abre a seleção de imagem
        */

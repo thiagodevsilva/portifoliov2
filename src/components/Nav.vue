@@ -34,9 +34,10 @@
                             <a href="https://www.linkedin.com/in/thiago-silva-a88a61219/" target="_blank" style="color: #00bf63; font-weight: 100; font-size: 1em; margin-right: 25px;">
                                 Linkedin
                             </a>  
-                            <a href="/projetos" style="color: #00bf63; font-weight: 100; font-size: 1em; margin-right: 25px;">
+                            <router-link to="/projetos" style="font-weight: 100; font-size: 1em; margin-right: 25px; color: #00bf63;">
                                 Projetos
-                            </a>  
+                            </router-link>
+
                             <!-- <a class="button is-primary" style="background-color: #00bf63;">
                                 <strong>Say Hello!</strong>
                             </a> -->
@@ -44,8 +45,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    
+        </div>    
     </nav>
 </template>
 
@@ -70,5 +70,10 @@ export default {
   .buttons {
     justify-content: flex-end !important;
   }
+}
+
+.router-link-active {    
+    font-weight: 600 !important;
+    text-decoration: underline; 
 }
 </style>

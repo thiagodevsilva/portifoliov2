@@ -36,7 +36,7 @@
               <button @click.prevent="editarProjeto(projeto.id)" class="button button-action is-success is-outlined is-rounded ml-1" title="Editar">
                 <i class="fa-solid fa-pen-to-square editar-projeto"></i>
               </button>
-              <button class="button button-action is-success is-outlined is-rounded ml-1" title="Excluir">
+              <button @click.prevent="openModal()" class="button button-action is-success is-outlined is-rounded ml-1" title="Excluir">
                 <i class="fa-solid fa-trash-can"></i>
               </button>
             </div>

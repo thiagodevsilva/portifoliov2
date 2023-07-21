@@ -132,6 +132,13 @@
         <UpdateBox :projetos="this.projetos"/>
       </div> -->
     </section>
+
+    <!-- Projetos em destaque -->
+    <section style="width: 100%;">
+      <div>
+        <CertificadosThiago />
+      </div>
+    </section>
   </div>
 </template>
   
@@ -142,6 +149,7 @@
   // import UpdateBox from '../components/home/Updates.vue';
   import HashtagSelection from '../components/home/HashtagsSelection.vue';
   import ProjetosDestaques from '../components/home/ProjetosDestaques.vue';
+  import CertificadosThiago from '../components/home/Certificados.vue';
   import moment from 'moment';  
 
   export default {
@@ -149,6 +157,7 @@
     components:{
       HashtagSelection,
       ProjetosDestaques,
+      CertificadosThiago,
       // UpdateBox,
     },
     data() {
